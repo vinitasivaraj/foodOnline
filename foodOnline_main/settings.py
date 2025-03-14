@@ -144,3 +144,20 @@ MESSAGE_TAGS = {
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# email config
+
+
+EMAIL_HOST=config('EMAIL_HOST')
+EMAIL_POST=config('EMAIL_POST', cast=int ,default='587')
+EMAIL_HOST_USER=config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS=True
+DEFAULT_FROM_EMAIL='Serve Hot App <testpydjvini@gmail.com> '
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Default: use database for sessions
+SESSION_COOKIE_SECURE = False  # Set to True if using HTTPS
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_AGE = 1209600  # Two weeks by default
