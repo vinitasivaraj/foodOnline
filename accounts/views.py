@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import UserForm
 from .models import User,UserProfile
+from vendor.models import Vendor
 from django.contrib import messages,auth
 from vendor.forms import VendorForm
 from.utils import detectUser,send_verification_email
@@ -93,7 +94,7 @@ def registerVendor(request):
 
 
             mail_subject='Please activate your account'
-            email_template='accounts/email/account_verfication_email.html'
+            email_template='accounts/email/account_verification_email.html'
             send_verification_email(request,user,mail_subject,email_template)
 
 
@@ -174,6 +175,7 @@ def custDashboard(request):
 @login_required(login_url='login')
 @user_passes_test(check_role_vendor)
 def vendorDashboard(request):
+   
     return render(request,"accounts/vendorDashboard.html")
 
 
