@@ -13,7 +13,7 @@ def post_save_create_profile_receiver(sender,instance,created,**kwargs):
             profile=UserProfile.objects.get(user=instance)
             profile.save()
         except:
-            UserProfile.objects.create(get=instance)
+            UserProfile.objects.create(user=instance)
   
 
 @receiver(pre_save, sender=User)
