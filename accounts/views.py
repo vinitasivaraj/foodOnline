@@ -90,6 +90,7 @@ def registerVendor(request):
            
             vendor = v_form.save(commit=False)
             vendor.user = user
+            
             vendor_name = v_form.cleaned_data['vendor_name']
             vendor.vendor_slug = slugify(vendor_name)+'-'+str(user.id)
             user_profile = UserProfile.objects.get(user=user)
@@ -120,6 +121,8 @@ def registerVendor(request):
 
     return render(request, 'accounts/registerVendor.html', context)
 
+
+    
 
 def activate(request, uidb64, token):
     # Activate the user by setting the is_active status to True
