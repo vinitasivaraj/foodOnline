@@ -71,6 +71,7 @@ TEMPLATES = [
                 'accounts.context_processors.get_vendor',
                 'marketplace.context_processors.get_cart_counter',
                 'marketplace.context_processors.get_cart_amount',
+                'accounts.context_processors.get_google_api',
 
             ],
         },
@@ -167,3 +168,6 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Default: use database 
 SESSION_COOKIE_SECURE = False  # Set to True if using HTTPS
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_AGE = 1209600  # Two weeks by default
+
+
+GOOGLE_API_KEY='AIzaSyAPcGkGuoHAz8jALLtTku1kJgDoOYb62UU'

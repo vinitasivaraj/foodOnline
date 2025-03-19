@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from vendor.models import Vendor
 from menu.models import Category,FooItem
 from django.shortcuts import get_object_or_404
@@ -123,3 +124,11 @@ def delete_cart(request,cart_id):
         else:
              return JsonResponse({'status': 'Failed', 'message': 'Invalid request!'})
 
+
+def search(request):
+        # address = request.GET['address']
+        # latitude = request.GET['lat']
+        # longitude = request.GET['lng']
+        # radius = request.GET['radius']
+        # keyword = request.GET['keyword']
+        return render(request,'marketplace/listings.html')

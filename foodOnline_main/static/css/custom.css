@@ -20,3 +20,22 @@
     cursor: pointer;
 }
 
+.main-search.fancy .field-holder input[type='text']{
+    color:#000000 !important;
+}
+
+
+.btn-custom {
+    font-size: 1.2rem;   /* Adjust font size */
+    padding: 5px 20px; /* Add custom padding */
+    background-color: #22ff2d; /* Change background color */
+    border: none;       /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    color: rgb(255, 255, 255);       /* Text color */
+    text-transform: uppercase; /* Text transformation */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.btn-custom:hover {
+    background-color: #e64a19; /* Change hover color */
+}
