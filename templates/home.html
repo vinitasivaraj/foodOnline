@@ -21,7 +21,6 @@
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 					<div class="main-search fancy bg-holder">
 						<form action="{url 'search' }" method="GET">
-							{% csrf_token %}
 							<div class="row">
 								<div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
 									<div class="field-holder">
@@ -58,7 +57,10 @@
 								</div>
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 									<div class="field-holder" style="display: flex; justify-content: center; align-items: center;">
-										<a href="{% url 'marketplace' %}" class="btn btn-success">Search</a>
+										<a href="{% url 'marketplace' %}" class="btn btn-success" style="font-size: 1.5 rem; padding: 15px 20px; width: 200px;">Search</a>
+									
+
+
 									</div>
 								</div>
 							</div>

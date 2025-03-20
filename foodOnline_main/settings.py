@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'menu',
     'marketplace',
     'customers',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,8 @@ TEMPLATES = [
                 'marketplace.context_processors.get_cart_amount',
                 'accounts.context_processors.get_google_api',
                 'accounts.context_processors.get_user_profile',
+                'accounts.context_processors.get_paypal_client_id',
+               
 
             ],
         },
@@ -172,4 +175,14 @@ SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_AGE = 1209600  # Two weeks by default
 
 
-GOOGLE_API_KEY='AIzaSyAPcGkGuoHAz8jALLtTku1kJgDoOYb62UU'
+GOOGLE_API_KEY=config('GOOGLE_API_KEY')
+
+PAYPAL_CLIENT_ID=config('PAYPAL_CLIENT_ID')
+
+
+
+
+from django.middleware.security import SecurityMiddleware
+
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"
+

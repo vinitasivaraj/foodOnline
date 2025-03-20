@@ -39,3 +39,43 @@
 .btn-custom:hover {
     background-color: #e64a19; /* Change hover color */
 }
+
+.mt-3, .my-3 {
+    margin-top: 0rem !important;
+}
+.pb-2, .py-2 {
+    padding-bottom: .9rem !important;
+}
+
+
+/* hide radio button */
+
+.payment-method [type=radio]{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+}
+payment_methods {
+    position: relative;
+}
+
+.payment_methods label {
+    cursor: pointer; /* Make the label clickable */
+}
+.payment_methods_container {
+    display: flex; /* Arrange items in a single line */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Add spacing between the items */
+}
+.payment-image {
+    border: 2px solid transparent; /* Default border style */
+    border-radius: 10px; /* Optional: rounded corners */
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+.payment_methods input[type="radio"]:checked + .payment-image {
+    border-color: #28a745; /* Highlight the selected image */
+    transform: scale(1.1); /* Slight zoom effect */
+}
