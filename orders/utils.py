@@ -1,13 +1,11 @@
 import datetime
-from .models import Order
 import simplejson as json
 
+
 def generate_order_number(pk):
-    curren_datetime=datetime.datetime.now().strftime('%y%m%d')
-    order_number=str(curren_datetime) + str(pk)
+    current_datetime = datetime.datetime.now().strftime('%Y%m%d%H%M%S') #20220616233810 + pk
+    order_number = current_datetime + str(pk)
     return order_number
-
-
 
 
 def order_total_by_vendor(order, vendor_id):
